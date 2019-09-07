@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6601274172099981553}
   - component: {fileID: 4308108995182339003}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tile_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3660472319778841350}
   - component: {fileID: 3547292107980190896}
-  m_Layer: 0
+  - component: {fileID: 843229922}
+  m_Layer: 8
   m_Name: BaseTerrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,8 +139,39 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.8, y: 2.6}
+  m_Size: {x: 7.74, y: 2.6}
   m_EdgeRadius: 0
+--- !u!114 &843229922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2151825126342474835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed017f292e6fc944c8c2efe4432cec9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  terrainMoveSpeed: {fileID: 11400000, guid: 31c3960ec0bd6ab40a2075f9dd288f51, type: 2}
+  limitToSpawn: 11.5
+  limitToDestroy: -16
+  spawn:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 47df292cb19e74a4c9d5cc543f51d1f8, type: 2}
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &7840593383797532136
 GameObject:
   m_ObjectHideFlags: 0
@@ -150,7 +182,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5243037394844593703}
   - component: {fileID: 4649043819260341669}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tile_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -230,7 +262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3779844326222059181}
   - component: {fileID: 5830114415388872479}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tile_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
