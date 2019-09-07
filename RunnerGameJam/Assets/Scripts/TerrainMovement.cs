@@ -27,7 +27,6 @@ public class TerrainMovement : MonoBehaviour
         {
             spawn.Invoke();
             spawned = true;
-            Debug.Log("Spawn");
         }
 
         if (transform.position.x <= limitToDestroy)
