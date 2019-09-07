@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpThrust: 0
+  colSizeSmall: {x: 0, y: 0}
 --- !u!50 &1357869965
 Rigidbody2D:
   serializedVersion: 4
@@ -157,3 +158,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpThrust: 2000
+  colSizeSmall: {x: 2.55, y: 0.9}
