@@ -47,7 +47,7 @@ public class CharacterBehaviour : MonoBehaviour
 
     private void Jump()
     {
-        if (Input.GetKeyDown("space") && grounded)
+        if (Input.GetKeyUp("space") && grounded)
         {
             rb.AddForce(transform.up * jumpThrust);
         }
@@ -55,13 +55,12 @@ public class CharacterBehaviour : MonoBehaviour
 
     private void Slide()
     {
-        if (Input.GetKey("space") && !isSliding)
+        if (Input.GetKey("down") && !isSliding)
         {
             col.size = colSizeSmall;
             isSliding = true;
-            //transform.localScale = new Vector3();
         }
-        if (Input.GetKeyUp("space") && isSliding)
+        if (Input.GetKeyUp("down") && isSliding)
         {
             col.size = colSizeNormal;
             isSliding = false;
