@@ -3,10 +3,12 @@
 public class CharacterBehaviour : MonoBehaviour
 {
     Rigidbody2D rb;
-    [SerializeField]
-    private float thrust;
 
+    [SerializeField]
+    private float jumpThrust;
     private bool grounded;
+
+    private BoxCollider2D col;
 
     void Start()
     {
@@ -39,7 +41,16 @@ public class CharacterBehaviour : MonoBehaviour
     {
         if (Input.GetKeyDown("space") && grounded)
         {
-            rb.AddForce(transform.up * thrust);
+            rb.AddForce(transform.up * jumpThrust);
         }
+    }
+
+    private void Duck()
+    {
+        if (Input.GetKey("space"))
+        {
+            col.size = new Vector3();
+        }
+
     }
 }
