@@ -2,33 +2,18 @@
 using UnityEngine.Events;
 using UnityTools.ScriptableVariables;
 
-public class TerrainMovement : MonoBehaviour
+public class InitialTerrainMovement : MonoBehaviour
 {
     [SerializeField]
     private GenericFloat terrainMoveSpeed;
 
     [SerializeField]
-    private float limitToSpawn, limitToDestroy;
-
-    private bool spawned;
-    public UnityEvent spawn;
-
-    void Start()
-    {
-        spawned = false;
-    }
+    private float limitToDestroy;
 
     void Update()
     {
         float step = Time.deltaTime * terrainMoveSpeed.var;
         transform.Translate(Vector3.left * terrainMoveSpeed.var);
-
-        if (transform.position.x <= limitToSpawn && !spawned)
-        {
-            spawn.Invoke();
-            spawned = true;
-            Debug.Log("Spawn");
-        }
 
         if (transform.position.x <= limitToDestroy)
         {
