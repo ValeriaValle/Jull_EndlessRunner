@@ -49,7 +49,7 @@ public class CharacterBehaviour : MonoBehaviour
     {
         if (Input.GetKeyUp("space") && grounded)
         {
-            rb.AddForce(transform.up * jumpThrust);
+            rb.AddRelativeForce(transform.up * jumpThrust, ForceMode2D.Impulse);
         }
     }
 

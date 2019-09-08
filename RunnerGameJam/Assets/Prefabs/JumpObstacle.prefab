@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 86695978229022085}
   - component: {fileID: 548119133354122940}
   - component: {fileID: 4554182318543081798}
+  - component: {fileID: 1882273695}
   m_Layer: 0
   m_Name: JumpObstacle
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,3 +108,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.59, y: 2.55}
   m_EdgeRadius: 0
+--- !u!114 &1882273695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9183465877006223636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c33d4af33560184f956253f88259065, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: {fileID: 11400000, guid: 31c3960ec0bd6ab40a2075f9dd288f51, type: 2}
+  limitToDestroy: -12

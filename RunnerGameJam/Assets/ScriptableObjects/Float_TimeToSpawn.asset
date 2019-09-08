@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 56f308c2ecbee194bb054aea6685b4f1, type: 3}
-  m_Name: Float_terrainMoveSpeed
+  m_Name: Float_TimeToSpawn
   m_EditorClassIdentifier: 
-  var: 0.1
+  var: 4
