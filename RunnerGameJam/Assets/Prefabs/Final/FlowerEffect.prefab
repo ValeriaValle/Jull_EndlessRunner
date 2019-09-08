@@ -148,7 +148,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -8033050013691433640, guid: 5c72f0797f5fc9e4e88278ec8ac5e29d,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -171,6 +171,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5040830217317014515}
   - component: {fileID: 7344432669934849308}
+  - component: {fileID: 7410857932374188862}
   m_Layer: 0
   m_Name: FlowerEffect
   m_TagString: Untagged
@@ -213,3 +214,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7410857932374188862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7958116886332041191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c33d4af33560184f956253f88259065, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: {fileID: 11400000, guid: 31c3960ec0bd6ab40a2075f9dd288f51, type: 2}
+  isPlaying: {fileID: 11400000, guid: 215bc4a8b49ff5f4a8e137cdb234ddb2, type: 2}
+  powerActive: {fileID: 0}
+  limitToDestroy: -12

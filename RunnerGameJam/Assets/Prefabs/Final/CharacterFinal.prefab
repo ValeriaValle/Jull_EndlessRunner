@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 2080803580747301280}
   - component: {fileID: 2080803580747301287}
   - component: {fileID: 2080803580747301286}
+  - component: {fileID: 1145138700}
   m_Layer: 0
   m_Name: CharacterFinal
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128,7 +129,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.59, y: 6.85}
+  m_Size: {x: 2.11, y: 6.85}
   m_EdgeRadius: 0
 --- !u!50 &2080803580747301287
 Rigidbody2D:
@@ -145,7 +146,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 4
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -163,9 +164,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95c2c01fbd7452742b2033d422c5ea1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpThrust: 20
+  jumpThrust: 24
   colSizeSmall: {x: 2.55, y: 0.9}
   powerActive: {fileID: 11400000, guid: cf2004daa23534d49a0b934f1b740f4f, type: 2}
+  effects:
+  - {fileID: 7958116886332041191, guid: 8a11fc2ac8131f34dbedfb47c91fc396, type: 3}
+  - {fileID: 4049825493182505575, guid: ac5c565f7726a0843b9d49168ed2811b, type: 3}
   GameOver:
     m_PersistentCalls:
       m_Calls:
@@ -198,3 +202,29 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!61 &1145138700
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080803580747301285}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.15999997, y: 0.68499994}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5597015, y: 0.4080537}
+    oldSize: {x: 2.68, y: 7.45}
+    newSize: {x: 2.68, y: 7.45}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.48, y: 1.5}
+  m_EdgeRadius: 0

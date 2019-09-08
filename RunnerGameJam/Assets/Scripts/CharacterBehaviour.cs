@@ -19,6 +19,9 @@ public class CharacterBehaviour : MonoBehaviour
     [SerializeField]
     private GenericBool powerActive;
 
+    [SerializeField]
+    private GameObject[] effects;
+
     public UnityEvent GameOver;
     public UnityEvent PowerUp;
 
@@ -47,16 +50,25 @@ public class CharacterBehaviour : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Obstacle"))
+        if (other.gameObject.CompareTag("LowObstacle") || other.gameObject.CompareTag("HighObstacle"))
         {
             if (!powerActive.var)
             {
                 GameOver.Invoke();
             }
-            else
+            else if (other.gameObject.CompareTag("LowObstacle"))
             {
-                Destroy(other.gameObject);
+                GameObject flowerEffect = Instantiate(effects[0]);
+                flowerEffect.transform.position = new Vector2(other.transform.position.x,
+                                                            flowerEffect.transform.position.y);
             }
+            else if (other.gameObject.CompareTag("HighObstacle"))
+            {
+                GameObject petalsEffect = Instantiate(effects[1]);
+                petalsEffect.transform.position = new Vector2(other.transform.position.x,
+                                                            petalsEffect.transform.position.y);
+            }
+            Destroy(other.gameObject);
         }
     }
 

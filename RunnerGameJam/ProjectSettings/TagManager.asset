@@ -9,6 +9,8 @@ TagManager:
   - Terrain
   - TerrainEdge
   - Obstacle
+  - LowObstacle
+  - HighObstacle
   layers:
   - Default
   - TransparentFX
