@@ -7,16 +7,13 @@ public class IntroManager : MonoBehaviour
     [SerializeField]
     private GenericBool introDone;
     [SerializeField]
-    private GameObject[] videoStuff;
+    private GameObject videoStuff;
 
     void Start()
     {
         if (introDone.var)
         {
-            foreach (GameObject item in videoStuff)
-            {
-                item.SetActive(false);
-            }
+            videoStuff.SetActive(false);
         }
         else
         {
@@ -27,10 +24,12 @@ public class IntroManager : MonoBehaviour
     IEnumerator QuitVideo()
     {
         yield return new WaitForSeconds(10.0f);
-        foreach (GameObject item in videoStuff)
-        {
-            introDone.var = true;
-            item.SetActive(false);
-        }
+        CloseVideo();
+    }
+
+    public void CloseVideo()
+    {
+        introDone.var = true;
+        videoStuff.SetActive(false);
     }
 }
