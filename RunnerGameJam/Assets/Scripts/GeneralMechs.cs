@@ -83,7 +83,13 @@ public class GeneralMechs : MonoBehaviour
 
     private void IncreaseDifficulty()
     {
-        spawnWait.var -= 0.5f;
-        moveSpeed.var += 0.02f;
+        if (spawnWait.var >= 0.7)
+        {
+            spawnWait.var -= 0.4f;
+        }
+        if (moveSpeed.var <= 0.22f)
+        {
+            moveSpeed.var += 0.02f;
+        }
     }
 }

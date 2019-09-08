@@ -178,8 +178,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacles:
-  - {fileID: 2269909236657488133, guid: 6dc0a39f043bbfa4eb32fbe2927ce66c, type: 3}
-  - {fileID: 9183465877006223636, guid: 137f3ad15646a3447b85e865f495a0b2, type: 3}
+  - {fileID: 2757278008675890099, guid: 32f2105a027d8cc4ab87e6d8002888f4, type: 3}
+  - {fileID: 8768165401522873641, guid: 0437b0f34184d5b4aac953518eb42db8, type: 3}
+  - {fileID: 3418498726404248780, guid: ef45229971f31594cb8651889ba7069a, type: 3}
+  - {fileID: 3592237817937665570, guid: 4108f62c407b4524cb9b30a5ef86c872, type: 3}
+  - {fileID: 7300026754137074734, guid: c2fba51da6c980b4385d34bac39c7604, type: 3}
 --- !u!1 &374528329
 GameObject:
   m_ObjectHideFlags: 0
@@ -1004,6 +1007,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1131739282}
   m_CullTransparentMesh: 0
+--- !u!1 &1145138693 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2080803580747301285, guid: ac98a00e9278aa3448b067b55e33d509,
+    type: 3}
+  m_PrefabInstance: {fileID: 2080803581570966244}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1145138700
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145138693}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.15999997, y: 0.68499994}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5597015, y: 0.4080537}
+    oldSize: {x: 2.68, y: 7.45}
+    newSize: {x: 2.68, y: 7.45}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.68, y: 1.5}
+  m_EdgeRadius: 0
 --- !u!1 &1197286684
 GameObject:
   m_ObjectHideFlags: 0
@@ -1731,10 +1766,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2080803580747301287, guid: ac98a00e9278aa3448b067b55e33d509,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2080803580747301286, guid: ac98a00e9278aa3448b067b55e33d509,
         type: 3}
       propertyPath: jumpThrust
-      value: 16
+      value: 24
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac98a00e9278aa3448b067b55e33d509, type: 3}

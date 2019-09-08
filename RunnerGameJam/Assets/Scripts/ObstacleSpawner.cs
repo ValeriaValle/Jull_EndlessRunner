@@ -7,7 +7,7 @@ public class ObstacleSpawner : MonoBehaviour
 
     public void SpawnObstacle()
     {
-        int rnd = Random.Range(0, 2);
+        int rnd = Random.Range(0, obstacles.Length);
         GameObject newObstacle = Instantiate(obstacles[rnd]);
         newObstacle.transform.position = new Vector2(transform.position.x, newObstacle.transform.position.y);
     }
