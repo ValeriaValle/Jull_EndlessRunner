@@ -1369,9 +1369,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9794f8dd9209eb04bbe789e1325e1a05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTime: {fileID: 11400000, guid: 1455d67021f450947aad8e7e48d5a34e, type: 2}
+  addScoreTime: 0.2
+  spawnWait: {fileID: 11400000, guid: 1455d67021f450947aad8e7e48d5a34e, type: 2}
   isPlaying: {fileID: 11400000, guid: 215bc4a8b49ff5f4a8e137cdb234ddb2, type: 2}
   gameOverUI: {fileID: 1750051001}
+  textScoreGame: {fileID: 374528331}
+  textScoreFinal: {fileID: 1933305521}
   spawnObstacle:
     m_PersistentCalls:
       m_Calls:
@@ -1462,7 +1465,7 @@ GameObject:
   - component: {fileID: 1933305522}
   - component: {fileID: 1933305521}
   m_Layer: 5
-  m_Name: Score
+  m_Name: ScoreFinal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

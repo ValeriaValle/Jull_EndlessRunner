@@ -5,16 +5,22 @@ using UnityTools.ScriptableVariables;
 
 public class GeneralMechs : MonoBehaviour
 {
-    private GenericInt score;
-    private float timer;
+    private int score;
     [SerializeField]
-    private GenericFloat waitTime;
+    private float addScoreTime, skillWaitTime;
+    private float spawnTimer, scoreTimer, skillTimer;
+    [SerializeField]
+    private GenericFloat spawnWait;
+    [SerializeField]
+    private GenericFloat moveSpeed;
     [SerializeField]
     private GenericBool isPlaying;
 
     [Header("UI Variables")]
     [SerializeField]
     private GameObject gameOverUI;
+    [SerializeField]
+    private Text textScoreGame, textScoreFinal;
 
     [Space]
     public UnityEvent spawnObstacle;
@@ -22,15 +28,33 @@ public class GeneralMechs : MonoBehaviour
     void Start()
     {
         isPlaying.var = true;
+        score = 0;
+        moveSpeed.var = 0.14f;
+        spawnWait.var = 4f;
     }
 
     void Update()
     {
-        timer -= Time.deltaTime;
-        if (timer <= 0f)
+        spawnTimer -= Time.deltaTime;
+        if (spawnTimer <= 0f)
         {
             spawnObstacle.Invoke();
-            timer = waitTime.var;
+            spawnTimer = spawnWait.var;
+        }
+
+        scoreTimer -= Time.deltaTime;
+        if (scoreTimer <= 0f)
+        {
+            score += 10;
+            textScoreGame.text = score.ToString();
+            scoreTimer = addScoreTime;
+        }
+
+        skillTimer -= Time.deltaTime;
+        if (skillTimer <= 0f)
+        {
+            IncreaseDifficulty();
+            skillTimer = skillWaitTime;
         }
     }
 
@@ -38,6 +62,13 @@ public class GeneralMechs : MonoBehaviour
     {
         Time.timeScale = 0f;
         gameOverUI.SetActive(true);
+        textScoreFinal.text = score.ToString();
         isPlaying.var = false;
+    }
+
+    private void IncreaseDifficulty()
+    {
+        spawnWait.var -= 0.5f;
+        moveSpeed.var += 0.02f;
     }
 }
