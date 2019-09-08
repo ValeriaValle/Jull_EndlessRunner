@@ -55,7 +55,7 @@ public class CharacterBehaviour : MonoBehaviour
             }
             else
             {
-                PowerUp.Invoke();
+                Destroy(other.gameObject);
             }
         }
     }
@@ -70,7 +70,7 @@ public class CharacterBehaviour : MonoBehaviour
 
     private void Jump()
     {
-        if (Input.GetKeyUp("space") && grounded)
+        if (Input.GetKeyDown("space") && grounded)
         {
             rb.AddRelativeForce(transform.up * jumpThrust, ForceMode2D.Impulse);
         }

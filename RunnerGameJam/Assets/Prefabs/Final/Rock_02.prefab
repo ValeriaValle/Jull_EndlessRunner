@@ -107,7 +107,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.9400295, y: 1.95}
+  m_Size: {x: 1.4, y: 1.95}
   m_EdgeRadius: 0
 --- !u!114 &3418498726404248777
 MonoBehaviour:
@@ -123,4 +123,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: {fileID: 11400000, guid: 31c3960ec0bd6ab40a2075f9dd288f51, type: 2}
   isPlaying: {fileID: 11400000, guid: 215bc4a8b49ff5f4a8e137cdb234ddb2, type: 2}
+  powerActive: {fileID: 0}
   limitToDestroy: -12

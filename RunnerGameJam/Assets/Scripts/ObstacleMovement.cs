@@ -8,6 +8,8 @@ public class ObstacleMovement : MonoBehaviour
     private GenericFloat moveSpeed;
     [SerializeField]
     private GenericBool isPlaying;
+    [SerializeField]
+    private GenericBool powerActive;
 
     [SerializeField]
     private float limitToDestroy;

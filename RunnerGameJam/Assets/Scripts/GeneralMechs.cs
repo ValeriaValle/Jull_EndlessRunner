@@ -6,25 +6,24 @@ using UnityTools.ScriptableVariables;
 public class GeneralMechs : MonoBehaviour
 {
     private int score;
-    [SerializeField]
-    private float addScoreTime, skillWaitTime, pUpTime;
-    private float spawnTimer, scoreTimer, skillTimer, pUpTimer;
 
-    //Scriptable Variables
     [SerializeField]
-    private GenericFloat spawnWait;
-    [SerializeField]
-    private GenericFloat moveSpeed;
-    [SerializeField]
-    private GenericBool isPlaying;
-    [SerializeField]
-    private GenericBool powerActive;
+    private float addScoreTime, skillWaitTime, powTime, spawnWaitTime;
+    private float spawnTimer, scoreTimer, skillTimer, powTimer;
 
     [Header("UI Variables")]
     [SerializeField]
     private GameObject gameOverUI;
     [SerializeField]
     private Text textScoreGame, textScoreFinal;
+
+    [Header("ScriptableVariables")]
+    [SerializeField]
+    private GenericFloat moveSpeed;
+    [SerializeField]
+    private GenericBool isPlaying;
+    [SerializeField]
+    private GenericBool powerActive;
 
     [Space]
     public UnityEvent spawnObstacle;
@@ -34,8 +33,9 @@ public class GeneralMechs : MonoBehaviour
         isPlaying.var = true;
         score = 0;
         moveSpeed.var = 0.15f;
-        spawnWait.var = 4f;
         powerActive.var = false;
+
+        powTimer = powTime;
     }
 
     void Update()
@@ -44,7 +44,7 @@ public class GeneralMechs : MonoBehaviour
         if (spawnTimer <= 0f)
         {
             spawnObstacle.Invoke();
-            spawnTimer = spawnWait.var;
+            spawnTimer = spawnWaitTime;
         }
 
         scoreTimer -= Time.deltaTime;
@@ -64,11 +64,12 @@ public class GeneralMechs : MonoBehaviour
 
         if (powerActive.var)
         {
-            pUpTimer -= Time.deltaTime;
-            if (pUpTimer <= 0f)
+            powTimer -= Time.deltaTime;
+            if (powTimer <= 0f)
             {
-                IncreaseDifficulty();
-                pUpTimer = pUpTime;
+                powerActive.var = false;
+                Debug.Log("PowerOver");
+                powTimer = powTime;
             }
         }
     }
@@ -83,11 +84,11 @@ public class GeneralMechs : MonoBehaviour
 
     private void IncreaseDifficulty()
     {
-        if (spawnWait.var >= 0.7)
+        if (spawnWaitTime >= 0.8)
         {
-            spawnWait.var -= 0.4f;
+            spawnWaitTime -= 0.4f;
         }
-        if (moveSpeed.var <= 0.22f)
+        if (moveSpeed.var <= 0.28f)
         {
             moveSpeed.var += 0.02f;
         }
