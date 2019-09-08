@@ -8,12 +8,16 @@ public class IntroManager : MonoBehaviour
     private GenericBool introDone;
     [SerializeField]
     private GameObject videoStuff;
+    [SerializeField]
+    private AudioSource menuAudio;
 
     void Start()
     {
+        introDone.var = true;
         if (introDone.var)
         {
             videoStuff.SetActive(false);
+            menuAudio.Play();
         }
         else
         {
@@ -31,5 +35,6 @@ public class IntroManager : MonoBehaviour
     {
         introDone.var = true;
         videoStuff.SetActive(false);
+        menuAudio.Play();
     }
 }
