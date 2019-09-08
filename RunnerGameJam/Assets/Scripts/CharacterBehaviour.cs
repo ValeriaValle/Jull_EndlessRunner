@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
+using UnityTools.ScriptableVariables;
 
 public class CharacterBehaviour : MonoBehaviour
 {
@@ -15,7 +16,11 @@ public class CharacterBehaviour : MonoBehaviour
     private BoxCollider2D col;
     private bool isSliding;
 
+    [SerializeField]
+    private GenericBool powerActive;
+
     public UnityEvent GameOver;
+    public UnityEvent PowerUp;
 
     void Start()
     {
@@ -44,7 +49,14 @@ public class CharacterBehaviour : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Obstacle"))
         {
-            GameOver.Invoke();
+            if (!powerActive.var)
+            {
+                GameOver.Invoke();
+            }
+            else
+            {
+                PowerUp.Invoke();
+            }
         }
     }
 

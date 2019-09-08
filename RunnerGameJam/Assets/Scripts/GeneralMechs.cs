@@ -7,14 +7,18 @@ public class GeneralMechs : MonoBehaviour
 {
     private int score;
     [SerializeField]
-    private float addScoreTime, skillWaitTime;
-    private float spawnTimer, scoreTimer, skillTimer;
+    private float addScoreTime, skillWaitTime, pUpTime;
+    private float spawnTimer, scoreTimer, skillTimer, pUpTimer;
+
+    //Scriptable Variables
     [SerializeField]
     private GenericFloat spawnWait;
     [SerializeField]
     private GenericFloat moveSpeed;
     [SerializeField]
     private GenericBool isPlaying;
+    [SerializeField]
+    private GenericBool powerActive;
 
     [Header("UI Variables")]
     [SerializeField]
@@ -29,8 +33,9 @@ public class GeneralMechs : MonoBehaviour
     {
         isPlaying.var = true;
         score = 0;
-        moveSpeed.var = 0.14f;
+        moveSpeed.var = 0.15f;
         spawnWait.var = 4f;
+        powerActive.var = false;
     }
 
     void Update()
@@ -55,6 +60,16 @@ public class GeneralMechs : MonoBehaviour
         {
             IncreaseDifficulty();
             skillTimer = skillWaitTime;
+        }
+
+        if (powerActive.var)
+        {
+            pUpTimer -= Time.deltaTime;
+            if (pUpTimer <= 0f)
+            {
+                IncreaseDifficulty();
+                pUpTimer = pUpTime;
+            }
         }
     }
 
