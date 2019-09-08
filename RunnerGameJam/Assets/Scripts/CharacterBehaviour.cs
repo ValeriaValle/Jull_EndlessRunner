@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 public class CharacterBehaviour : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class CharacterBehaviour : MonoBehaviour
     private Vector2 colSizeNormal;
     private BoxCollider2D col;
     private bool isSliding;
+
+    public UnityEvent GameOver;
 
     void Start()
     {
@@ -34,6 +37,14 @@ public class CharacterBehaviour : MonoBehaviour
         if (other.gameObject.CompareTag("Terrain"))
         {
             grounded = true;
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Obstacle"))
+        {
+            GameOver.Invoke();
         }
     }
 

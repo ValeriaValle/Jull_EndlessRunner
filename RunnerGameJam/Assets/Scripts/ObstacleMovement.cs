@@ -6,18 +6,23 @@ public class ObstacleMovement : MonoBehaviour
 {
     [SerializeField]
     private GenericFloat moveSpeed;
+    [SerializeField]
+    private GenericBool isPlaying;
 
     [SerializeField]
     private float limitToDestroy;
 
     void Update()
     {
-        float step = Time.deltaTime * moveSpeed.var;
-        transform.Translate(Vector3.left * moveSpeed.var);
-
-        if (transform.position.x <= limitToDestroy)
+        if (isPlaying.var)
         {
-            Destroy(gameObject);
+            float step = Time.deltaTime * moveSpeed.var;
+            transform.Translate(Vector3.left * moveSpeed.var);
+
+            if (transform.position.x <= limitToDestroy)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

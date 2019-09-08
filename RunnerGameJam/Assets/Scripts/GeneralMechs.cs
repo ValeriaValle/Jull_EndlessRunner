@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 using UnityTools.ScriptableVariables;
 
 public class GeneralMechs : MonoBehaviour
@@ -8,8 +9,20 @@ public class GeneralMechs : MonoBehaviour
     private float timer;
     [SerializeField]
     private GenericFloat waitTime;
+    [SerializeField]
+    private GenericBool isPlaying;
 
+    [Header("UI Variables")]
+    [SerializeField]
+    private GameObject gameOverUI;
+
+    [Space]
     public UnityEvent spawnObstacle;
+
+    void Start()
+    {
+        isPlaying.var = true;
+    }
 
     void Update()
     {
@@ -21,4 +34,10 @@ public class GeneralMechs : MonoBehaviour
         }
     }
 
+    public void GameOver()
+    {
+        Time.timeScale = 0f;
+        gameOverUI.SetActive(true);
+        isPlaying.var = false;
+    }
 }

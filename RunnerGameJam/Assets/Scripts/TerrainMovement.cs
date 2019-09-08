@@ -6,6 +6,8 @@ public class TerrainMovement : MonoBehaviour
 {
     [SerializeField]
     private GenericFloat terrainMoveSpeed;
+    [SerializeField]
+    private GenericBool isPlaying;
 
     [SerializeField]
     private float limitToSpawn, limitToDestroy;
@@ -20,18 +22,21 @@ public class TerrainMovement : MonoBehaviour
 
     void Update()
     {
-        float step = Time.deltaTime * terrainMoveSpeed.var;
-        transform.Translate(Vector3.left * terrainMoveSpeed.var);
-
-        if (transform.position.x <= limitToSpawn && !spawned)
+        if (isPlaying.var)
         {
-            spawn.Invoke();
-            spawned = true;
-        }
+            float step = Time.deltaTime * terrainMoveSpeed.var;
+            transform.Translate(Vector3.left * terrainMoveSpeed.var);
 
-        if (transform.position.x <= limitToDestroy)
-        {
-            Destroy(gameObject);
+            if (transform.position.x <= limitToSpawn && !spawned)
+            {
+                spawn.Invoke();
+                spawned = true;
+            }
+
+            if (transform.position.x <= limitToDestroy)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

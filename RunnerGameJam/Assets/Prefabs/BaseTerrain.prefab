@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   terrainMoveSpeed: {fileID: 11400000, guid: 31c3960ec0bd6ab40a2075f9dd288f51, type: 2}
+  isPlaying: {fileID: 11400000, guid: 215bc4a8b49ff5f4a8e137cdb234ddb2, type: 2}
   limitToSpawn: 12.21
   limitToDestroy: -16
   spawn:

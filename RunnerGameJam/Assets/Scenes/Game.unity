@@ -1227,6 +1227,24 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
+  - eventName: GameOver
+    Event: {fileID: 11400000, guid: 13799d57dd8a5014f8d872f4ac4975ab, type: 2}
+    Response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1687365092}
+          m_MethodName: GameOver
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
 --- !u!4 &1472279649
 Transform:
   m_ObjectHideFlags: 0
@@ -1352,6 +1370,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waitTime: {fileID: 11400000, guid: 1455d67021f450947aad8e7e48d5a34e, type: 2}
+  isPlaying: {fileID: 11400000, guid: 215bc4a8b49ff5f4a8e137cdb234ddb2, type: 2}
+  gameOverUI: {fileID: 1750051001}
   spawnObstacle:
     m_PersistentCalls:
       m_Calls:
@@ -1409,7 +1429,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1750051002
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1583,21 +1603,45 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Terrain
       objectReference: {fileID: 0}
+    - target: {fileID: 1082114068361585216, guid: 5c0b7099bd6fdd342aa9c947d1c6dbf7,
+        type: 3}
+      propertyPath: isPlaying
+      value: 
+      objectReference: {fileID: 11400000, guid: 215bc4a8b49ff5f4a8e137cdb234ddb2,
+        type: 2}
     - target: {fileID: 1159417469651621857, guid: 5c0b7099bd6fdd342aa9c947d1c6dbf7,
         type: 3}
       propertyPath: m_TagString
       value: Terrain
       objectReference: {fileID: 0}
+    - target: {fileID: 1159417469651621856, guid: 5c0b7099bd6fdd342aa9c947d1c6dbf7,
+        type: 3}
+      propertyPath: isPlaying
+      value: 
+      objectReference: {fileID: 11400000, guid: 215bc4a8b49ff5f4a8e137cdb234ddb2,
+        type: 2}
     - target: {fileID: 3520224854906007793, guid: 5c0b7099bd6fdd342aa9c947d1c6dbf7,
         type: 3}
       propertyPath: m_TagString
       value: Terrain
       objectReference: {fileID: 0}
+    - target: {fileID: 3520224854906007792, guid: 5c0b7099bd6fdd342aa9c947d1c6dbf7,
+        type: 3}
+      propertyPath: isPlaying
+      value: 
+      objectReference: {fileID: 11400000, guid: 215bc4a8b49ff5f4a8e137cdb234ddb2,
+        type: 2}
     - target: {fileID: 7693325873869768218, guid: 5c0b7099bd6fdd342aa9c947d1c6dbf7,
         type: 3}
       propertyPath: m_TagString
       value: Terrain
       objectReference: {fileID: 0}
+    - target: {fileID: 7693325873869768221, guid: 5c0b7099bd6fdd342aa9c947d1c6dbf7,
+        type: 3}
+      propertyPath: isPlaying
+      value: 
+      objectReference: {fileID: 11400000, guid: 215bc4a8b49ff5f4a8e137cdb234ddb2,
+        type: 2}
     - target: {fileID: 5224906341532001969, guid: 5c0b7099bd6fdd342aa9c947d1c6dbf7,
         type: 3}
       propertyPath: limitToSpawn
@@ -1674,12 +1718,47 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1357869965, guid: e5ad8bc95d8972d48aa91add61d2c4fe, type: 3}
       propertyPath: m_GravityScale
-      value: 3
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1357869965, guid: e5ad8bc95d8972d48aa91add61d2c4fe, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5348481632192527580, guid: e5ad8bc95d8972d48aa91add61d2c4fe,
+        type: 3}
+      propertyPath: GameOver.m_PersistentCalls.m_Calls.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5348481632192527580, guid: e5ad8bc95d8972d48aa91add61d2c4fe,
         type: 3}
       propertyPath: jumpThrust
-      value: 2050
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 5348481632192527580, guid: e5ad8bc95d8972d48aa91add61d2c4fe,
+        type: 3}
+      propertyPath: GameOver.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5348481632192527580, guid: e5ad8bc95d8972d48aa91add61d2c4fe,
+        type: 3}
+      propertyPath: GameOver.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5348481632192527580, guid: e5ad8bc95d8972d48aa91add61d2c4fe,
+        type: 3}
+      propertyPath: GameOver.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: 13799d57dd8a5014f8d872f4ac4975ab,
+        type: 2}
+    - target: {fileID: 5348481632192527580, guid: e5ad8bc95d8972d48aa91add61d2c4fe,
+        type: 3}
+      propertyPath: GameOver.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Raise
+      objectReference: {fileID: 0}
+    - target: {fileID: 5348481632192527580, guid: e5ad8bc95d8972d48aa91add61d2c4fe,
+        type: 3}
+      propertyPath: GameOver.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5ad8bc95d8972d48aa91add61d2c4fe, type: 3}
