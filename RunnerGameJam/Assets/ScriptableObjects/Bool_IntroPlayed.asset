@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1c5e68d578475d4f8e117872b49f35b, type: 3}
   m_Name: Bool_IntroPlayed
   m_EditorClassIdentifier: 
-  var: 1
+  var: 0

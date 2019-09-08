@@ -19,6 +19,7 @@ public class CharacterBehaviour : MonoBehaviour
     [SerializeField]
     private GenericBool powerActive;
 
+    [Header("Particles")]
     [SerializeField]
     private GameObject[] effects;
 

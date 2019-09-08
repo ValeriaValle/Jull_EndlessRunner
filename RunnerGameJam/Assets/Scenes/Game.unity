@@ -183,7 +183,7 @@ MonoBehaviour:
   - {fileID: 3418498726404248780, guid: ef45229971f31594cb8651889ba7069a, type: 3}
   - {fileID: 3592237817937665570, guid: 4108f62c407b4524cb9b30a5ef86c872, type: 3}
   - {fileID: 7300026754137074734, guid: c2fba51da6c980b4385d34bac39c7604, type: 3}
-  power: {fileID: 3834436491756965873, guid: 8dd3e2306dacecb40afeeb4fdae69f6f, type: 3}
+  power: {fileID: 7429024981568622547, guid: cfcb4b2dc7ce25c49be56443c549dee8, type: 3}
   powUpTime: 20
 --- !u!1 &374528329
 GameObject:
@@ -561,6 +561,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 595644088}
   m_CullTransparentMesh: 0
+--- !u!1 &853485165 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8739402517969766504, guid: ac98a00e9278aa3448b067b55e33d509,
+    type: 3}
+  m_PrefabInstance: {fileID: 2080803581570966244}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &969020205
 GameObject:
   m_ObjectHideFlags: 0
@@ -1231,6 +1237,7 @@ MonoBehaviour:
   skillWaitTime: 5
   powTime: 10
   spawnWaitTime: 4
+  playerGlow: {fileID: 853485165}
   gameOverUI: {fileID: 1750051001}
   textScoreGame: {fileID: 374528331}
   textScoreFinal: {fileID: 1933305521}
@@ -1540,16 +1547,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2080803580747301281, guid: ac98a00e9278aa3448b067b55e33d509,
-        type: 3}
-      propertyPath: m_CullingMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2080803580747301281, guid: ac98a00e9278aa3448b067b55e33d509,
-        type: 3}
-      propertyPath: m_UpdateMode
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac98a00e9278aa3448b067b55e33d509, type: 3}

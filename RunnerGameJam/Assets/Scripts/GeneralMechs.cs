@@ -10,6 +10,8 @@ public class GeneralMechs : MonoBehaviour
     [SerializeField]
     private float addScoreTime, skillWaitTime, powTime, spawnWaitTime;
     private float spawnTimer, scoreTimer, skillTimer, powTimer;
+    [SerializeField]
+    private GameObject playerGlow;
 
     [Header("UI Variables")]
     [SerializeField]
@@ -64,11 +66,15 @@ public class GeneralMechs : MonoBehaviour
 
         if (powerActive.var)
         {
+            if (!playerGlow.activeSelf)
+            {
+                playerGlow.SetActive(true);
+            }
             powTimer -= Time.deltaTime;
             if (powTimer <= 0f)
             {
                 powerActive.var = false;
-                Debug.Log("PowerOver");
+                playerGlow.SetActive(false);
                 powTimer = powTime;
             }
         }
