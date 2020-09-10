@@ -1,6 +1,6 @@
 # Jull 🌱
 
-Jull is an Endless Runner game for PC made in 48 hours for the Women Game Jam 2019. 
+Jull is an Endless Runner game for PC made in 48 hours for the Women Game Jam. 
 
 ###
 <p align="center">
