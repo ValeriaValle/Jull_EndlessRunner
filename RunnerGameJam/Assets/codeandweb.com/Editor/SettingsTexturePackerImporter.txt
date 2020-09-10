@@ -1,12 +1,12 @@
 version: 2
 importPivots: 1
 tpsheetFileNames:
+- Assets/_JullGame/Images/sprt_Running.tpsheet
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.tpsheet
-- Assets/Images/running.tpsheet
 textureFileNames:
+- Assets/_JullGame/Images/running.png
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.png
-- Assets/Images/running.png
 normalmapFileNames:
-- Assets/codeandweb.com/Example/SpriteSheet/sprites_n.png
 - 
+- Assets/codeandweb.com/Example/SpriteSheet/sprites_n.png
 enableDebugOutput: 0
